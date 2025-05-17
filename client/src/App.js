@@ -8,8 +8,10 @@ function App() {
   const [minutes, setMinutes] = useState("");
   const [rationId, setRationId] = useState("");
   const [queues, setQueues] = useState([]);
+  const [reportDate, setReportDate] = useState("");
 
   useEffect(() => {
+    // Get geolocation address
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
         async (pos) => {
@@ -35,8 +37,11 @@ function App() {
       setLocation("Geolocation not supported");
     }
 
+    // Set time & date
     const now = new Date();
-    setMinutes(now.toTimeString().substring(0, 5)); // HH:MM
+    setMinutes(now.toTimeString().substring(0, 5));
+    const today = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
+    setReportDate(today);
 
     fetchQueues();
   }, []);
@@ -63,6 +68,7 @@ function App() {
           location,
           minutes,
           category: rationId,
+          date: reportDate, // ✅ Send date
         }),
       });
 
@@ -83,7 +89,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1> Queue Reporter</h1>
+      <h1>Queue Reporter</h1>
 
       <form className="queue-form" onSubmit={handleSubmit}>
         <label>
@@ -103,13 +109,19 @@ function App() {
         </label>
 
         <label>
-           Name or ID:
+          Name or ID:
           <input
             value={rationId}
             onChange={(e) => setRationId(e.target.value)}
             placeholder="Name or Card Number"
             required
           />
+        </label>
+
+        {/* Optional: Show auto-filled date */}
+        <label>
+          🗓️ Date:
+          <input type="date" value={reportDate} readOnly />
         </label>
 
         <button type="submit">📤 Submit Report</button>
@@ -126,6 +138,7 @@ function App() {
               <p>Reported By: {q["Reported Name"] ?? "Anonymous"}</p>
               <p>Expected Wait: <strong>{q.minutes}</strong></p>
               <p>Report: {q.report ?? "N/A"}</p>
+              <p>Date: {q.date ?? "N/A"}</p>
             </div>
           ))
         )}
