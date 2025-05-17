@@ -83,7 +83,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1>🇮🇳 Ration Shop Queue Reporter</h1>
+      <h1> Queue Reporter</h1>
 
       <form className="queue-form" onSubmit={handleSubmit}>
         <label>
@@ -103,7 +103,7 @@ function App() {
         </label>
 
         <label>
-          🪪 Ration Card Holder Name or ID:
+           Name or ID:
           <input
             value={rationId}
             onChange={(e) => setRationId(e.target.value)}
