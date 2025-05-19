@@ -3,15 +3,32 @@ import "./App.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+// ✅ Helper to show "x minutes ago"
+function getTimeAgo(timestamp) {
+  const now = new Date();
+  const time = new Date(timestamp);
+  const diffMs = now - time;
+
+  const diffMins = Math.floor(diffMs / 60000);
+  if (diffMins < 1) return "just now";
+  if (diffMins < 60) return `${diffMins} minute(s) ago`;
+
+  const diffHours = Math.floor(diffMins / 60);
+  if (diffHours < 24) return `${diffHours} hour(s) ago`;
+
+  const diffDays = Math.floor(diffHours / 24);
+  return `${diffDays} day(s) ago`;
+}
+
 function App() {
   const [location, setLocation] = useState("Fetching...");
   const [minutes, setMinutes] = useState("");
   const [rationId, setRationId] = useState("");
   const [queues, setQueues] = useState([]);
   const [reportDate, setReportDate] = useState("");
+  const [lastUpdated, setLastUpdated] = useState(""); // ✅ Last updated state
 
   useEffect(() => {
-    // Get geolocation address
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
         async (pos) => {
@@ -37,13 +54,20 @@ function App() {
       setLocation("Geolocation not supported");
     }
 
-    // Set time & date
     const now = new Date();
     setMinutes(now.toTimeString().substring(0, 5));
-    const today = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
+    const today = new Date().toISOString().split("T")[0];
     setReportDate(today);
 
     fetchQueues();
+  }, []);
+
+  // ✅ Auto-refresh every 10 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetchQueues();
+    }, 10000);
+    return () => clearInterval(interval);
   }, []);
 
   const fetchQueues = async () => {
@@ -51,6 +75,7 @@ function App() {
       const res = await fetch("http://127.0.0.1:5000/api/queues");
       const data = await res.json();
       setQueues(data);
+      setLastUpdated(new Date().toLocaleTimeString()); // ✅ update time
     } catch (err) {
       console.error("Failed to fetch queues:", err);
       toast.error("❌ Could not load queue data.");
@@ -68,7 +93,7 @@ function App() {
           location,
           minutes,
           category: rationId,
-          date: reportDate, // ✅ Send date
+          date: reportDate,
         }),
       });
 
@@ -118,7 +143,6 @@ function App() {
           />
         </label>
 
-        {/* Optional: Show auto-filled date */}
         <label>
           🗓️ Date:
           <input type="date" value={reportDate} readOnly />
@@ -128,6 +152,10 @@ function App() {
       </form>
 
       <h2>📊 Submitted Reports</h2>
+      <p style={{ fontStyle: "italic", color: "#555", marginTop: "-10px" }}>
+        Last updated: {lastUpdated}
+      </p>
+
       <div className="queue-list">
         {queues.length === 0 ? (
           <p>No reports yet</p>
@@ -139,6 +167,7 @@ function App() {
               <p>Expected Wait: <strong>{q.minutes}</strong></p>
               <p>Report: {q.report ?? "N/A"}</p>
               <p>Date: {q.date ?? "N/A"}</p>
+              <p>🕒 Reported: {getTimeAgo(q.timestamp)}</p>
             </div>
           ))
         )}
