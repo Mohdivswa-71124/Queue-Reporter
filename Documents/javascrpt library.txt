@@ -1,0 +1,47 @@
+1.jQuery - used for simpular html DOM manipulate and also make easier to animation
+           DOM - document object model-basically on how every elements on the webpage organized.
+           this library backend much easier to learn ,understand and user friendly then the javascript-syntax also simple-this after only react,angular are came.
+2.polymer - javascript library made by google-to build resuable we components(it represents small element(code) of wepage) - this components use shadow DOM.
+3.mootools - javascript librarymuch like jquery-used for DOM manipulation,event handling and Ajax - mostly do same puepose jquery but sytax only differ.
+4.Masonry - helps to build grid and masonaries of your website-allow u to build column based grid layout also animation.
+5.Threejs - library for 3D modeling and animation - it uses javascript API called webGL-used for all 3D related work - sometimes AR and VR.
+6.Greensock - this also for animation-works seamlessly with js frameworks(react,vue,angular)-also used to library Action script-used for flash.
+7.D3 js - Data-driven documentation-used for visualization(charts,plotes,graph)
+-even animation,ineractive dashboard,popularly known create and maipulate svg.
+8.chart js - JavaScript library for data visualization, which supports eight chart types: bar, line, area, pie, bubble, radar, polar, and scatter.
+9.Animate on scroll - AOS. js (Animate On Scroll) library, allows you to animate elements into view as you scroll down the page.
+10.Anime js -  lightweight JavaScript animation library that makes it easy to animate CSS properties, SVG, DOM attributes, and JavaScript objects. It's known for its simple and powerful API, offering features like staggering, layered CSS transforms, and built-in controls and callbacks.  
+11.BideoJS - 
+12. Plotly - creating interactive, web-based data visualizations - update realtime,cros-paltform. 
+13.BrainJS - Brain.js is a JavaScript library used for neural networking, which is released as free and open-source software under the MIT License.[1] It can be used in both the browser and Node.js backends
+14.Tensorflow js - TensorFlow. js lets you develop or execute ML models in JavaScript, and use ML directly in the browser client side, server side via Node. js, mobile native via React Native, desktop native via Electron, and even on IoT devices via Node. js on Raspberry Pi.
+15.Socket.io - Socket.IO is a JavaScript library that facilitates real-time, bidirectional communication between web clients and servers.
+16.PDF js - PDF.js is a JavaScript library that renders Portable Document Format (PDF) files using the web standards-compliant HTML5 Canvas.
+
+
+17.Node js - Backend:
+Node.js is designed to run JavaScript code on the server-side, handling requests, processing data, and managing database interactions. It's a popular choice for building APIs, server-side applications, and real-time applications. 
+
+            Frontend:
+While not a direct frontend framework, Node.js tools like NPM and YARN are crucial for managing frontend dependencies, building frontend applications, and automating tasks. Additionally, libraries like Webpack and Parcel are used for packaging and bundling frontend code, with Node.js as their runtime environment. 
+
+
+           Full Stack:
+Node.js can be used to build full-stack applications, meaning it can handle both the frontend and backend logic. This is often achieved by using frameworks like Next.js and Gatsby, which leverage Node.js as their runtime and offer server-side rendering and other features. 
+
+
+before node js all use php and java for server side language ,node can handle because it made top of v8 javasccript engine the same engine runs on chrome thats why javascript programmer able to be fullstact(mern).
+
+18.GranimJS - it was smooth gradient animation with html canvas element controls colours ,animatin schemas
+
+19.Deno js - Deno and Node. js are both runtimes built on the V8 JavaScript engine developed by the Chromium Project, the engine used for Chromium and Google Chrome web browsers. They both have internal event loops and provide command-line interfaces for running scripts and a wide range of system utilities - supports typescript but not have npm packages.
+
+20.Ionic - UI build progressive web apps-cross platform - pre build UI's - can integrate with javascript frameworks (vite,react)-same created person of vite.
+
+21.Vite - fast(in French)-supports typescript,hot model replacement(developers to see changes in their application almost instantly without full page reloads. )-Vite.js uses native ES module support in modern browsers, allowing for faster server start times and module loading-Vite.js supports various frontend frameworks like React, Vue, and more. 
+
+22.Gatsby -  GatsbyJS, a renowned static site generator, capitalized on the concept of compiling static pages at build time before deployment. Static pages are deployed on the server by an initial request, leading to the server sending a full pre-rendered page.
+
+23.Jest - Jest is a JavaScript testing framework designed to ensure correctness of any JavaScript codebase. It allows you to write tests with an approachable, familiar and feature-rich API that gives you results quickly. Jest is well-documented, requires little configuration and can be extended to match your requirements.
+
+24.mocha - 

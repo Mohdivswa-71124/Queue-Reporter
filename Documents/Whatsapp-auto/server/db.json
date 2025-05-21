@@ -1,0 +1,18 @@
+{
+  "queues": [
+    {
+      "location": "Shanti Nagar 2nd Cross Street,  Chromepet,  Pallavaram",
+      "minutes": "14:00",
+      "Reported Name": "Mo",
+      "timestamp": "2025-05-17T08:30:15.579Z",
+      "report": 1
+    },
+    {
+      "location": "Shanti Nagar 2nd Cross Street,  Chromepet,  Pallavaram",
+      "minutes": "14:00",
+      "Reported Name": "divya",
+      "timestamp": "2025-05-17T08:30:39.787Z",
+      "report": 2
+    }
+  ]
+}

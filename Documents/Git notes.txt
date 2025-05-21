@@ -1,0 +1,52 @@
+1. git init:create git in local repositorty(create git environment)
+2. git clone: get repository copy on laptop as folder
+        step 1: first open terminal in the folder where u want to clone the folder
+        step 2: then if u are already configured straightly u can give command as git clone and paste the repo link,if u not configured early then,
+3. git config : to config git to GitHub by the following commands
+               git config --global user.name ""
+               git config --global user.email ""(u set this then only it will work , creation email only give)
+now if u successfully configured and cloned the file means .git folder also created because it was a connection between local and cloud repo using this only we will push,pull.
+4.git add filename: this command ready file to stage, if u give commit it will stage,then u push the staged files are gone to cloud, to do this follow the steps:
+             cd(change directory) foldername
+             git add filename(through this process chabge the unstaged to ready for staging)
+
+        the git add was like a envelope , git commit is like message we written on the envelop, to post the lettor is push.
+5.commit hash:on the envelope date,time ,from name,to name all details join and develop as unique number,u can the commit msg and hash number through commit option in the GitHub .
+6. git reset: it was used to reset the mistake that u want to unstage already staged one or in the history last commit will revert.
+        *conventional commits website for create fix:message(this was create for specific problem ) feat:message(for create new feature) or already in factors u want to put variable means use refactor:message, create doc for code means use doc:message, not important work put chore:message, if u change affect others means put !fix:breaking change*
+7. git commit: for commit some msg use
+            commit -m ""
+
+8. git push : after all the stages u want appear that change on cloud repo u need to push it
+              git push or git push origin remote(in the place git clone url is origin , we already cloned means auto know that origin is same url so we specify as origin and branch means normally 2 main and master.
+[ Each we want to push means first change unstage to stage by,
+               git add filename
+               git commit -m
+  through this two process the file changed to staged ,then only we can push or pull to cloud]
+
+8. git pull: from local to cloud change means push ,cloud to local change means pull by simply,
+                git pull
+9. git merge: if normally we change one thing another one change also to merge this as one we use git merge command
+10.git status:if sometimes we forgot how many how many files are staged and how many are not staged that time we use this by simple,
+          git status
+   it returns what files are not staged and  not commited .
+10.git diff:if u modified means it shows what are the changes
+11. git add. : this was used only if u know that all changes are at current file and folder instead of giving git add filename everytime
+
+[ Everytime before push do pull command]
+
+when work together usage comments:
+
+
+12. git branch: to know the current branch
+13. git checkout -b "": for creating new branch , if u again want to go back same  branch means repeat the same command(branch name space not allowed).
+14.pull request:giving request to merge diff branch files ,if the owner accept the merge and pull request that all will apear in main if pull request not accept send msg and click close this concept is also known as merging.
+15. merge conflict: if both developers doing changes on same line that will going to merge means  this will appear,this will be resolve simply choosing the option.
+16. git stash: its like recycle bin if we dont need that command we will put that to stash its like stack whenever we want we can pop it,
+       git stash
+       git stash pop
+17. to change branch name by,
+          git branch -M " "(caps -m means rename)
+          git branch -a (show all branches including in the cloud)
+          git log (to see all changes made at that the current file)
+                    

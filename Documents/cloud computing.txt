@@ -1,0 +1,26 @@
+               cloud computing
+colud-server - to store data -ex google drive,photos
+    
+cloud types :
+
+1.public(access by everyone from server)
+2.private(only particular org)
+3.hybrid (public + private)
+
+cloud service models :
+       1.Saas(software as a service),packed software OS & Application stack server storage network,end users.
+       2.Paas(platform as a service),OS & Apllication stack server storage network,application developers.
+       3.Iaas(infrastructure as a service)server storage network,infrastructure network architects
+
+cloud service provider :
+      1.AWS(or amazon web services)
+      2.Azure microsoft
+      3.Google cloud
+
+
+pay-as-you-go pricing.
+Instead of owning and managing physical infrastructure
+onprime vs cloud
+
+Q&A:
+Laptop,RAM,powerpoint,
